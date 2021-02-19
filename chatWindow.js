@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
-import Socket from "./webSocketUtil";
+import Socket from "./service/webSocketUtil";
 
 export default class ChatWindow extends Component {
   socket = null;
