@@ -16,7 +16,7 @@ export default class ChatWindow extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <ChatArea />
       </View>
     );
