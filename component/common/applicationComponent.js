@@ -3,6 +3,10 @@ import ServiceExecutor from "../../service/serviceExecutor";
 import ApplicationContext from "./applicationContext";
 
 export default class ApplicationComponent extends Component {
+  state = {
+    showModal: false,
+  };
+
   _applicationContext = new ApplicationContext();
   // _storage = new Storage();
   _serviceExecutor;
@@ -18,7 +22,7 @@ export default class ApplicationComponent extends Component {
         () => console.log("saveUserToken"),
         () => console.log("removeUserToken"),
         () => console.log("getUserToken"),
-        this.onError
+        () => console.log("please override on error!")
       );
     }
     return this._serviceExecutor;
@@ -31,4 +35,8 @@ export default class ApplicationComponent extends Component {
   navigateParams() {
     return this.props.route.params;
   }
+
+  toggleModal = () => {
+    this.setState((state) => ({ showModal: !state.showModal }));
+  };
 }

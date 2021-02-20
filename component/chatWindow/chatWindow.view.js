@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { KeyboardAvoidingView, Text, View } from "react-native";
+import AudioRecord from "./audioRecord";
+import ApplicationComponentView from "../common/applicationComponent.view";
 
-export default class ChatWindowView extends Component {
+export default class ChatWindowView extends ApplicationComponentView {
   render() {
     const {
       inputMessage,
@@ -28,6 +30,7 @@ export default class ChatWindowView extends Component {
             padding: 15,
           }}
         >
+          <AudioRecord />
           <InputArea inputMessage={inputMessage} onChangeText={onChangeText} />
           <SendMessageButton onPressSendMessage={onPressSendMessage} />
         </View>

@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="正在討論" component={BottomTabNavigator} />
       <Stack.Screen
         name="ChatWindow"
