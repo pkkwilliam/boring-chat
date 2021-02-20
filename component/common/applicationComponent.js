@@ -1,8 +1,11 @@
 import { Component } from "react";
+import { Context } from "../../context/applicationStateContext";
 import ServiceExecutor from "../../service/serviceExecutor";
 import ApplicationContext from "./applicationContext";
 
 export default class ApplicationComponent extends Component {
+  static contextType = Context;
+
   state = {
     showModal: false,
   };
