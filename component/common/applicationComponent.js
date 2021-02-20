@@ -23,4 +23,12 @@ export default class ApplicationComponent extends Component {
     }
     return this._serviceExecutor;
   }
+
+  navigate(pageName, param = {}) {
+    this.props.navigation.navigate(pageName, param);
+  }
+
+  navigateParams() {
+    return this.props.route.params;
+  }
 }

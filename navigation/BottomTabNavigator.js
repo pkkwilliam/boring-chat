@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import ChatWindow from "../chatWindow";
+import Channels from "../component/channels/channels";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -12,8 +12,8 @@ export default function BottomTabNavigator() {
       // tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
-        name="ChatWindow"
-        component={ChatWindow}
+        name="Channels"
+        component={Channels}
         //   options={{
         //     tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         //   }}

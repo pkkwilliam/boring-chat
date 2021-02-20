@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import ChatWindow from "../chatWindow";
 import BottomTabNavigator from "./BottomTabNavigator";
+import ChatWindow from "../component/chatWindow/chatWindow";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -20,9 +20,13 @@ const Stack = createStackNavigator();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="Root" component={BottomTabNavigator} /> */}
-      <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen name="正在討論" component={BottomTabNavigator} />
+      <Stack.Screen
+        name="ChatWindow"
+        component={ChatWindow}
+        options={({ route }) => ({ title: route.params.title })}
+      />
     </Stack.Navigator>
   );
 }
